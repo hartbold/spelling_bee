@@ -3,7 +3,8 @@ import random
 import os
 
 def is_pangram(word):
-    return len(word) == 7; # número de letras de la colmena       
+    if len(set(list(word))) == 7: return True 
+    return False
 
 worddict = dict()
 # with open(os.getenv("WEB") + "/spelling_bee/castellano_clean.dict", 'r') as dictfile:
@@ -45,6 +46,8 @@ while(len(res) < 15):
 data = {'letters':todays_letters, 'pangram': pangram, 'possible_words':res, 'center_letter': center_letter, 'maxscore': score}
 
 # escribimos la data en un fichero que se leerá desde le programa para recuperar las letras
+
+print(data)
 
 print(os.getcwd())
 file = open(os.getenv("WEB") + "spelling_bee/palabras_del_dia.json", "wt")
