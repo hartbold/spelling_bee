@@ -25,7 +25,7 @@ yarn-error.log*
 
 /src
 /public
-*.py
+# *.py
 *.txt
 
 *.json
