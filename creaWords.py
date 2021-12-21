@@ -48,5 +48,6 @@ data = {'letters':todays_letters, 'pangram': pangram, 'possible_words':res, 'cen
 
 print(os.getcwd())
 file = open("/tmp/palabras_del_dia.json", "wt")
-file.write(data)
+json.dump(data, file)
+#file.write(data)
 file.close()
