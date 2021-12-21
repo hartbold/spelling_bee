@@ -7,10 +7,10 @@ def is_pangram(word):
 
 worddict = dict()
 # with open(os.getenv("WEB") + "/spelling_bee/castellano_clean.dict", 'r') as dictfile:
-with open(os.getenv("WEB") +"spelling_bee/castellano_clean.dict", 'r') as dictfile:
+with open(os.getenv("WEB") +"spelling_bee/castellano_clean.dict", 'r', 1,'utf-8') as dictfile:
     pangram_set = set()
     for line in dictfile:
-        palabro = line.strip()
+        palabro = line.strip().replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n")
         worddict[palabro] = True;
         if is_pangram(palabro):
             letterset = frozenset(palabro)
