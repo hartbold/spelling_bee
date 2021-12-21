@@ -6,7 +6,8 @@ def is_pangram(word):
     return len(word) == 7; # número de letras de la colmena       
 
 worddict = dict()
-with open(os.getenv("WEB") + "/spelling_bee/castellano_clean.dict", 'r') as dictfile:
+# with open(os.getenv("WEB") + "/spelling_bee/castellano_clean.dict", 'r') as dictfile:
+with open("./castellano_clean.dict", 'r') as dictfile:
     pangram_set = set()
     for line in dictfile:
         palabro = line.strip()
@@ -45,4 +46,7 @@ data = {'letters':todays_letters, 'pangram': pangram, 'possible_words':res, 'cen
 
 # escribimos la data en un fichero que se leerá desde le programa para recuperar las letras
 
-print(data)
+print(os.getcwd())
+file = open("/tmp/palabras_del_dia.json", "wt")
+file.write(data)
+file.close()
