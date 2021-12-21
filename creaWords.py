@@ -47,7 +47,7 @@ data = {'letters':todays_letters, 'pangram': pangram, 'possible_words':res, 'cen
 # escribimos la data en un fichero que se leerá desde le programa para recuperar las letras
 
 print(os.getcwd())
-file = open("./palabras_del_dia.json", "wt")
+file = open(os.getenv("WEB") + "palabras_del_dia.json", "wt")
 json.dump(data, file)
 #file.write(data)
 file.close()
