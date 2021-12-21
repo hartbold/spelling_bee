@@ -5,7 +5,9 @@ $f = "/tmp/palabras_del_dia.json";
 if(file_exists($f)){
     $file = file_get_contents($f);
 } else {
-    $file = "{error}";
+    $file = '{
+        "error": '.getcwd().'
+      }';
 }
 
 
